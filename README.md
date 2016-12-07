@@ -1,4 +1,4 @@
-#AGradientLayer实现背景颜色渐变效果,和某些特效。
+> 很多时候设计师希望背景颜色加上颜色渐变效果,这样会使整个界面看起来色彩更加丰富,生动。今天主要讲解下如何用CAGradientLayer实现背景颜色渐变效果,和使用CAGradientLayer实现某些渐变的特效。
 
 ##  先看效果动画
 
@@ -26,7 +26,7 @@
     colorLayer.locations = @[@(0.25),@(0.5),@(0.75)];//颜色渐变位置分割线
 ```
 
-> 这里得注意`startPoint`,`endPoint`,`locations`遵循`Layler`的坐标系，范围为(0,1),`locations`里面的值是递增的，位置点可以看做是y值为0在x轴上的点。至于每个颜色所暂用区域和渐变到下一个颜色的分割线是由`locations`上的点到`startPoint`,`endPoint`这条直线所确定确定。
+> 这里得注意`startPoint`,`endPoint`,`locations`遵循`Layler`的坐标系，范围为(0,1)。`locations`里面的值是递增的，其位置点可以看做是y值为0在x轴上的点。至于每个颜色所占区域和渐变分割线是由`locations`上的点到（`startPoint`与`endPoint`这条直线）所确定确定。例如我上面代码所表示的区域画线后如下图所示：
 
 ![蓝线为起始位置和结束位置，黄线为分割线](http://upload-images.jianshu.io/upload_images/2926059-bb0031d34bf7a261.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -65,7 +65,7 @@
 
 ```
 
-> 这里只是做了个定时器对位置对`locations`进行定增操作。
+> 这里只是做了个定时器对`locations`进行定增操作。
 
 #特效2
 
@@ -174,3 +174,6 @@
 
 ### 扩展
 其实`CAGradientLayer 的这四个属性 `colors`,` locations`, `startPoint`, `endPoint` 我们都是可以进行动画操作.
+
+## 下载地址
+[GitHub](https://github.com/zhuozhuo/CAGradientLayer)
